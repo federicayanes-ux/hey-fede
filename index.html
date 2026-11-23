@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hey, Fede! is a playful quiz and digital scrapbook about Federica."
+    />
+    <meta name="theme-color" content="#30147a" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Hey, Fede! — How well do you know Fede?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=MonteCarlo&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css?v=42" />
+    <script>
+      // During editing, always load the newest saved content instead of a cached copy.
+      window.addEventListener("DOMContentLoaded", () => {
+        const revision = Date.now();
+        const contentScript = document.createElement("script");
+        contentScript.src = `js/content.js?edit=${revision}`;
+        contentScript.addEventListener("load", () => {
+          const appScript = document.createElement("script");
+          appScript.src = `js/app.js?edit=${revision}`;
+          document.body.append(appScript);
+        });
+        document.body.append(contentScript);
+      });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the fun</a>
+
+    <header class="site-header" data-header>
+      <a class="mini-logo" href="#home" aria-label="Hey Fede home">
+        <span>H</span><span>F!</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#game">The game</a>
+        <a href="#scrapbook">Scrapbook</a>
+        <a href="#about">Fede 101</a>
+      </nav>
+      <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">
+        <span aria-hidden="true">♪</span>
+        <span data-sound-label>Music off</span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="premiere-lights" aria-hidden="true">
+          <span class="searchlight searchlight--one"></span>
+          <span class="searchlight searchlight--two"></span>
+          <span class="searchlight searchlight--three"></span>
+          <span class="searchlight searchlight--four"></span>
+        </div>
+        <p class="eyebrow sticker sticker--lime">Tonight's contestant: you</p>
+
+        <div class="hero-title-wrap">
+          <h1 id="hero-title" class="collage-title" aria-label="Hey, Fede!">
+            <svg
+              class="marquee-title"
+              viewBox="0 0 1280 250"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <linearGradient id="marquee-face" x1="0" y1="0" x2="0" y2="1">
+                  <stop class="title-color title-color--top" offset="0%"></stop>
+                  <stop class="title-color title-color--middle" offset="52%"></stop>
+                  <stop class="title-color title-color--bottom" offset="100%"></stop>
+                </linearGradient>
+                <filter id="marquee-shadow" x="-20%" y="-30%" width="150%" height="180%">
+                  <feDropShadow dx="12" dy="15" stdDeviation="4" flood-color="#170b25" flood-opacity="0.75"></feDropShadow>
+                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffcf45" flood-opacity="0.28"></feDropShadow>
+                </filter>
+              </defs>
+              <text
+                class="marquee-title__back"
+                x="640"
+                y="196"
+                text-anchor="middle"
+                textLength="1160"
+                lengthAdjust="spacingAndGlyphs"
+              >HEY, FEDE!</text>
+              <text
+                class="marquee-title__face"
+                x="640"
+                y="196"
+                text-anchor="middle"
+                textLength="1160"
+                lengthAdjust="spacingAndGlyphs"
+              >HEY, FEDE!</text>
+            </svg>
+          </h1>
+          <div class="title-fireworks" aria-hidden="true">
+            <span class="firework firework--one"></span>
+            <span class="firework firework--two"></span>
+            <span class="firework firework--three"></span>
+            <span class="firework firework--four"></span>
+            <span class="firework firework--five"></span>
+          </div>
+          <span class="scribble scribble--star" aria-hidden="true">✦</span>
+          <span class="scribble scribble--loop" aria-hidden="true"></span>
+        </div>
+
+        <div class="hero-bottom">
+          <p class="hero-intro" data-site-intro>
+            Think you know Fede? Prove it. Every correct answer unlocks a little more
+            of the story.
+          </p>
+          <a class="burst-button" href="#game" data-start-game>
+            <span>Play<br />the quiz</span>
+            <span class="burst-button__arrow" aria-hidden="true">↘</span>
+          </a>
+          <div class="score-tease" aria-hidden="true">
+            <span class="score-tease__label">HIGH SCORE</span>
+            <strong data-best-score>00</strong>
+            <span>/ <span data-question-total>06</span></span>
+          </div>
+        </div>
+
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker__track">
+            <span>MEMORIES ✦ MUSIC ✦ FRIENDS ✦ CHAOS ✦ STORIES ✦</span>
+            <span>MEMORIES ✦ MUSIC ✦ FRIENDS ✦ CHAOS ✦ STORIES ✦</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-section" id="game" aria-labelledby="game-title">
+        <div class="section-number" aria-hidden="true">01</div>
+        <div class="game-shell">
+          <div class="game-intro" data-game-intro>
+            <p class="kicker">THE MAIN EVENT</p>
+            <h2 id="game-title">How well do you<br /><em>really</em> know me?</h2>
+            <p>
+              A few questions. One shot at each. Bragging rights and secret memories
+              await.
+            </p>
+            <button class="ticket-button" type="button" data-begin-quiz>
+              <span>Enter the game</span><span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="quiz" data-quiz hidden>
+            <div class="quiz-topline">
+              <p class="question-counter">
+                Question <strong data-current-question>1</strong> of
+                <span data-question-total>6</span>
+              </p>
+              <p class="live-score">Score: <strong data-live-score>0</strong></p>
+            </div>
+            <div
+              class="progress-track"
+              role="progressbar"
+              aria-label="Quiz progress"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              data-progress-track
+            >
+              <span data-progress-bar></span>
+            </div>
+            <div class="question-stage" data-question-stage>
+              <p class="question-category" data-question-category>Fede 101</p>
+              <h3 data-question-text>Question goes here</h3>
+              <div class="answers" data-answers></div>
+              <div class="feedback" data-feedback aria-live="polite"></div>
+              <button class="next-button" type="button" data-next-question hidden>
+                Next question <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="results" data-results hidden>
+            <p class="kicker">THE VERDICT IS IN</p>
+            <div class="result-score">
+              <strong data-result-score>0</strong>
+              <span>/ <span data-question-total>6</span></span>
+            </div>
+            <h2 data-result-title>You survived the Fede test!</h2>
+            <p data-result-message></p>
+            <p class="unlock-message" data-unlock-message></p>
+            <div class="result-actions">
+              <button class="ticket-button" type="button" data-share-result>
+                <span data-share-label>Copy my result</span><span aria-hidden="true">↗</span>
+              </button>
+              <button class="text-button" type="button" data-replay>Play again</button>
+              <a class="text-button" href="#scrapbook">See what I unlocked ↓</a>
+            </div>
+          </div>
+        </div>
+        <div class="game-doodle" aria-hidden="true">?</div>
+      </section>
+
+      <section class="scrapbook" id="scrapbook" aria-labelledby="scrapbook-title">
+        <div class="scrapbook-heading">
+          <p class="kicker">Score to snoop</p>
+          <h2 id="scrapbook-title">The Fede<br /><span>scrapbook</span></h2>
+          <p>
+            Your best score opens the archive. Locked pieces stay hazy until you earn
+            them.
+          </p>
+          <div class="unlock-key" aria-label="Your scrapbook progress">
+            <span data-unlocked-count>0</span> / <span data-memory-count>0</span> unlocked
+          </div>
+          <button class="reset-score-button" type="button" data-reset-score>
+            <span aria-hidden="true">↺</span>
+            Reset score to 0
+          </button>
+        </div>
+        <div class="memory-wall" data-memory-wall></div>
+      </section>
+
+      <section
+        class="memory-reader"
+        data-memory-reader
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="memory-reader-title"
+        hidden
+      >
+        <button
+          class="memory-reader__backdrop"
+          type="button"
+          data-close-memory
+          aria-label="Close memory"
+        ></button>
+        <div class="memory-reader__stage">
+          <button class="memory-reader__close" type="button" data-close-memory>
+            <span aria-hidden="true">←</span> Back to scrapbook
+          </button>
+          <article class="memory-reader__page" data-memory-reader-page tabindex="-1"></article>
+        </div>
+      </section>
+
+      <section class="stories" aria-labelledby="stories-title">
+        <div class="stories-title-wrap">
+          <p class="kicker">FEDE, OFF THE RECORD</p>
+          <h2 id="stories-title">Three stories<br /><em>I can never tell quickly</em></h2>
+          <p class="stories-title-wrap__intro">
+            A soft one, a hot take and one tiny cookie-related family scandal.
+          </p>
+        </div>
+        <div class="story-list" data-story-list></div>
+      </section>
+
+      <section
+        class="story-reader"
+        data-story-reader
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="story-reader-title"
+        hidden
+      >
+        <button
+          class="story-reader__backdrop"
+          type="button"
+          data-close-story
+          aria-label="Close story"
+        ></button>
+        <div class="oreo-rain" data-oreo-rain aria-hidden="true"></div>
+        <div class="story-reader__stage">
+          <button class="story-reader__back" type="button" data-close-story>
+            <span aria-hidden="true">←</span> Back to stories
+          </button>
+          <article class="story-reader__page">
+            <div class="story-reader__header">
+              <p class="story-reader__number" data-story-reader-number></p>
+              <p class="story-reader__stamp">CLASSIFIED STORY</p>
+            </div>
+            <h2 id="story-reader-title" data-story-reader-title></h2>
+            <div class="story-reader__rule" aria-hidden="true"></div>
+            <figure class="story-reader__image" data-story-reader-image hidden>
+              <img data-story-reader-image-source alt="" />
+            </figure>
+            <p class="story-reader__text" data-story-reader-text>
+              <span data-story-reader-typed></span><span class="story-reader__cursor" aria-hidden="true"></span>
+            </p>
+            <button class="story-reader__skip" type="button" data-skip-story>
+              Show full story
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about-marquee" aria-hidden="true">
+          <span>FEDE 101 ✦ FEDE 101 ✦ FEDE 101 ✦ FEDE 101 ✦</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-portrait">
+            <div class="portrait-placeholder" data-profile-image>
+              <span>YOUR<br />PHOTO<br />HERE</span>
+            </div>
+            <span class="tape tape--one" aria-hidden="true"></span>
+            <span class="tape tape--two" aria-hidden="true"></span>
+          </div>
+          <div class="about-copy">
+            <p class="kicker">NO SCORE REQUIRED</p>
+            <h2 id="about-title">A quick guide<br />to <em>me.</em></h2>
+            <p data-about-copy>
+              This part is always open. Add a short introduction that sounds like you,
+              not a formal biography.
+            </p>
+          </div>
+          <div class="taste-list" data-taste-list></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with stories, guesses &amp; a suspicious amount of color.</p>
+      <a href="#home">Back to top ↑</a>
+      <p>© <span data-current-year></span> Federica Yanes</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+
+    <div class="correct-celebration" data-correct-celebration aria-hidden="true">
+      <div class="correct-celebration__glow"></div>
+      <p>Correct!</p>
+      <span class="answer-firework answer-firework--one"></span>
+      <span class="answer-firework answer-firework--two"></span>
+      <span class="answer-firework answer-firework--three"></span>
+      <div class="correct-celebration__confetti" data-correct-confetti></div>
+    </div>
+
+    <div class="wrong-celebration" data-wrong-celebration aria-hidden="true">
+      <div class="wrong-celebration__glow"></div>
+      <p>Wrong</p>
+      <span class="wrong-mark wrong-mark--one">×</span>
+      <span class="wrong-mark wrong-mark--two">×</span>
+      <span class="wrong-mark wrong-mark--three">×</span>
+      <div class="wrong-celebration__shards" data-wrong-shards></div>
+    </div>
+  </body>
+</html>

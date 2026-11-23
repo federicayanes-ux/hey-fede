@@ -1,0 +1,14 @@
+.DS_Store
+work/
+tmp/
+outputs/
+scripts/
+*.log
+
+# Earlier unused media experiments
+assets/audio/README.md
+assets/audio/hey-fede-acoustic-loop.wav
+assets/audio/hey-fede-reggaeton-loop.wav
+assets/audio/veneka-rawayana-akapellah.mp3
+assets/images/README.md
+assets/images/scrapbook-people-section.jpg
